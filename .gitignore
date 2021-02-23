@@ -1,0 +1,11 @@
+**/*.rs.bk
+.#*
+.gdb_history
+Cargo.lock
+target/
+
+# VS-Code Editor files
+.vscode
+
+# Cargo files
+.cargo-ok
