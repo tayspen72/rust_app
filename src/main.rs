@@ -64,4 +64,6 @@ fn app_init(p: &nrf52832_pac::Peripherals) {
 //==============================================================================
 fn app_task_handler(p: &nrf52832_pac::Peripherals) {
 	button::task_handler(p);
+
+	debug::task_handler();
 }

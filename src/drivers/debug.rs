@@ -32,6 +32,17 @@ pub fn init(p: &nrf52832_pac::Peripherals) {
 	let line = get_uartline();
 	
 	uart::init(p, &line);
+
+	debug_write_string(p, "*************************");
+	debug_write_string(p, "*  Debugger Initialied  *");
+	debug_write_string(p, "*************************");
+}
+
+pub fn debug_write_string(p: &nrf52832_pac::Peripherals, string: &str) {
+	let bytes = string.as_bytes();
+	for i in 0..string.len() {
+		uart::tx(p, bytes[i]);
+	}
 }
 
 fn get_uartline() -> &'static uart::UartLine {
@@ -56,4 +67,6 @@ fn get_uartline() -> &'static uart::UartLine {
 //==============================================================================
 // Task Handler
 //==============================================================================
-
+pub fn task_handler() {
+	uart::task_handler();
+}
