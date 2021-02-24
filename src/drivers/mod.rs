@@ -11,6 +11,7 @@ pub mod button;
 pub mod debug;
 pub mod ht16k33;
 pub mod led;
+pub mod lcd;
 
 //==============================================================================
 // Enums, Structs, and Types
